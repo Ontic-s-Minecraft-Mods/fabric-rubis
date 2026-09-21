@@ -2,6 +2,7 @@ package com.onticentity.ruby;
 
 import com.onticentity.ruby.blocks.RubisBlocks;
 import com.onticentity.ruby.items.RubisItems;
+import com.onticentity.ruby.worldgen.gen.RubisWorldgen;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
@@ -18,6 +19,7 @@ public class Rubis implements ModInitializer {
 	public void onInitialize() {
 		RubisItems.initialize();
 		RubisBlocks.initialize();
+		RubisWorldgen.initialize();
 	}
 
 	public static Identifier id(String path) {
