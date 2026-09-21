@@ -5,7 +5,7 @@
 	"name": "rubis",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Me!"
+		"Onticentity"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -22,7 +22,7 @@
 			"com.onticentity.ruby.client.RubisClient"
 		],
 		"fabric-datagen": [
-			"com.onticentity.ruby.client.RubisDataGenerator"
+			"com.onticentity.ruby.client.datagens.RubisDataGen"
 		]
 	},
 	"mixins": [
