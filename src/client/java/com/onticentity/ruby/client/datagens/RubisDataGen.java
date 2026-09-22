@@ -19,6 +19,7 @@ public class RubisDataGen implements DataGeneratorEntrypoint {
         pack.addProvider(RubisBlockLootTableProvider::new);
         pack.addProvider(RubisBlockTagProvider::new);
         pack.addProvider(RubisItemTagProvider::new);
+        pack.addProvider(RubisRecipeProvider::new);
 
         pack.addProvider(RubisEnglishLangProvider::new);
         pack.addProvider((FabricDataGenerator.Pack.Factory<RubisEquipmentAssetProvider>) RubisEquipmentAssetProvider::new);
