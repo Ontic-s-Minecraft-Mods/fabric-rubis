@@ -1,12 +1,15 @@
 package com.onticentity.ruby.blocks;
 
 import com.onticentity.ruby.Rubis;
+import com.onticentity.ruby.items.RubisItems;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -117,5 +120,11 @@ public class RubisBlocks {
     }
 
     public static void initialize() {
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS)
+                .register((creativeTab) -> creativeTab.accept(RubisBlocks.RUBY_ORE));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS)
+                .register((creativeTab) -> creativeTab.accept(RubisBlocks.DEEPSLATE_RUBY_ORE));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS)
+                .register((creativeTab) -> creativeTab.accept(RubisBlocks.RUBY_BLOCK));
     }
 }
