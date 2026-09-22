@@ -18,5 +18,6 @@ public class RubisEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add("block.rubis.ruby_block", "Ruby Block");
 
         translationBuilder.add("item.rubis.ruby", "Ruby");
+        translationBuilder.add("item.rubis.ruby_chestplate", "Ruby Chestplate");
     }
 }

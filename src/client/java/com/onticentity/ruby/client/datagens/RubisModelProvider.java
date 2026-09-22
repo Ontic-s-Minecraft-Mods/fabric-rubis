@@ -33,6 +33,7 @@ public class RubisModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
         itemModelGenerator.generateFlatItem(RubisItems.RUBY, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(RubisItems.RUBY_CHESTPLATE, ModelTemplates.FLAT_ITEM);
     }
 
     @Override

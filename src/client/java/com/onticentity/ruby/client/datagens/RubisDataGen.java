@@ -1,9 +1,6 @@
 package com.onticentity.ruby.client.datagens;
 
-import com.onticentity.ruby.datagens.RubisBlockLootTableProvider;
-import com.onticentity.ruby.datagens.RubisBlockTagProvider;
-import com.onticentity.ruby.datagens.RubisEnglishLangProvider;
-import com.onticentity.ruby.datagens.RubisWorldgenProvider;
+import com.onticentity.ruby.datagens.*;
 import com.onticentity.ruby.worldgen.RubisConfiguredFeatures;
 import com.onticentity.ruby.worldgen.RubisPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -23,6 +20,7 @@ public class RubisDataGen implements DataGeneratorEntrypoint {
         pack.addProvider(RubisBlockTagProvider::new);
 
         pack.addProvider(RubisEnglishLangProvider::new);
+        pack.addProvider((FabricDataGenerator.Pack.Factory<RubisEquipmentAssetProvider>) RubisEquipmentAssetProvider::new);
     }
 
     @Override
