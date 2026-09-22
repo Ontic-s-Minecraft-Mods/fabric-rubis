@@ -17,6 +17,8 @@ public class RubisEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add("block.rubis.deepslate_ruby_ore", "Deepslate Ruby Ore");
         translationBuilder.add("block.rubis.ruby_block", "Ruby Block");
 
+        translationBuilder.add("trim_material.rubis.ruby", "Ruby Material");
+
         translationBuilder.add("item.rubis.ruby", "Ruby");
         translationBuilder.add("item.rubis.ruby_chestplate", "Ruby Chestplate");
     }

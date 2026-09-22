@@ -15,7 +15,7 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 import java.util.Map;
 
 public class RubisMaterials {
-    public static final int BASE_DURABILITY = 47;
+    public static final int BASE_DURABILITY = 34;
 
     public static final ResourceKey<EquipmentAsset> GUIDITE_ARMOR_MATERIAL_KEY = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Rubis.MOD_ID, "ruby"));
 
@@ -25,7 +25,7 @@ public class RubisMaterials {
             BASE_DURABILITY,
             Map.of(
                     ArmorType.HELMET, 5,
-                    ArmorType.CHESTPLATE, 10,
+                    ArmorType.CHESTPLATE, 15,
                     ArmorType.LEGGINGS, 8,
                     ArmorType.BOOTS, 4
             ),
