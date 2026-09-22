@@ -11,51 +11,111 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
 
 import java.util.function.Function;
 
 public class RubisBlocks {
-    private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties, boolean shouldRegisterItem) {
-        ResourceKey<Block> blockKey = keyOfBlock(name);
+    public static final ResourceKey<Block> RUBY_ORE_KEY =
+            keyOfBlock("ruby_ore");
 
-        Block block = blockFactory.apply(properties.setId(blockKey));
+    public static final ResourceKey<Block> DEEPSLATE_RUBY_ORE_KEY =
+            keyOfBlock("deepslate_ruby_ore");
 
-        if (shouldRegisterItem) {
-            ResourceKey<Item> itemKey = keyOfItem(name);
+    public static final ResourceKey<Block> RUBY_BLOCK_KEY =
+            keyOfBlock("ruby_block");
 
-            BlockItem blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
-            Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
+
+    public static final Block RUBY_ORE = register(
+            "ruby_ore",
+            RUBY_ORE_KEY,
+            Block::new,
+            BlockBehaviour.Properties.of()
+                    .strength(3.5F, 3.5F)
+                    .mapColor(MapColor.STONE)
+                    .requiresCorrectToolForDrops()
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.STONE),
+            true
+    );
+
+    public static final Block DEEPSLATE_RUBY_ORE = register(
+            "deepslate_ruby_ore",
+            DEEPSLATE_RUBY_ORE_KEY,
+            Block::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DEEPSLATE)
+                    .strength(5.0F, 5.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.DEEPSLATE),
+            true
+    );
+
+    public static final Block RUBY_BLOCK = register(
+            "ruby_block",
+            RUBY_BLOCK_KEY,
+            Block::new,
+            BlockBehaviour.Properties.of()
+                    .strength(5.5F, 6.5F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL),
+            true
+    );
+
+    private static Block register(
+            String name,
+            ResourceKey<Block> blockKey,
+            Function<BlockBehaviour.Properties, Block> blockFactory,
+            BlockBehaviour.Properties properties,
+            boolean registerItem
+    ) {
+        Block block = blockFactory.apply(
+                properties.setId(blockKey)
+        );
+
+        if (registerItem) {
+            registerBlockItem(name, block);
         }
 
-        return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
+        return Registry.register(
+                BuiltInRegistries.BLOCK,
+                blockKey,
+                block
+        );
+    }
+
+    private static void registerBlockItem(String name, Block block) {
+        ResourceKey<Item> itemKey = keyOfItem(name);
+
+        BlockItem blockItem = new BlockItem(
+                block,
+                new Item.Properties()
+                        .setId(itemKey)
+                        .useBlockDescriptionPrefix()
+        );
+
+        Registry.register(
+                BuiltInRegistries.ITEM,
+                itemKey,
+                blockItem
+        );
     }
 
     private static ResourceKey<Block> keyOfBlock(String name) {
-        return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Rubis.MOD_ID, name));
+        return ResourceKey.create(
+                Registries.BLOCK,
+                Identifier.fromNamespaceAndPath(Rubis.MOD_ID, name)
+        );
     }
 
     private static ResourceKey<Item> keyOfItem(String name) {
-        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Rubis.MOD_ID, name));
+        return ResourceKey.create(
+                Registries.ITEM,
+                Identifier.fromNamespaceAndPath(Rubis.MOD_ID, name)
+        );
     }
 
     public static void initialize() {
     }
-
-    public static final Block RUBY_ORE = register("ruby_ore", Block::new,
-            BlockBehaviour.Properties.of()
-                    .strength(50.0F, 1400.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.STONE), true);
-
-    public static final Block DEEPSLATE_RUBY_ORE = register("deepslate_ruby_ore", Block::new,
-            BlockBehaviour.Properties.of()
-                    .strength(50.0F, 1400.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.DEEPSLATE), true);
-
-    public static final Block RUBY_BLOCK = register("ruby_block", Block::new,
-            BlockBehaviour.Properties.of()
-                    .strength(50.0F, 1400.0F)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.METAL), true);
 }

@@ -1,5 +1,7 @@
 package com.onticentity.ruby.client.datagens;
 
+import com.onticentity.ruby.datagens.RubisBlockLootTableProvider;
+import com.onticentity.ruby.datagens.RubisBlockTagProvider;
 import com.onticentity.ruby.datagens.RubisWorldgenProvider;
 import com.onticentity.ruby.worldgen.RubisConfiguredFeatures;
 import com.onticentity.ruby.worldgen.RubisPlacedFeatures;
@@ -16,6 +18,8 @@ public class RubisDataGen implements DataGeneratorEntrypoint {
 
         pack.addProvider(RubisModelProvider::new);
         pack.addProvider(RubisWorldgenProvider::new);
+        pack.addProvider(RubisBlockLootTableProvider::new);
+        pack.addProvider(RubisBlockTagProvider::new);
     }
 
     @Override
