@@ -18,7 +18,7 @@ public class RubisConfiguredFeatures {
     public static void configure(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceableRule = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceableRule = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
-        List<OreConfiguration.TargetBlockState> sapphireOreConfiguration = List.of(
+        List<OreConfiguration.TargetBlockState> rubyOreConfiguration = List.of(
                 OreConfiguration.target(stoneReplaceableRule, RubisBlocks.RUBY_ORE.defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceableRule, RubisBlocks.DEEPSLATE_RUBY_ORE.defaultBlockState())
         );
@@ -26,28 +26,28 @@ public class RubisConfiguredFeatures {
                 RUBY_ORE_VEIN_SIZE_ONE_CONFIGURED_KEY,
                 new ConfiguredFeature<>(
                         Feature.ORE,
-                        new OreConfiguration(sapphireOreConfiguration, 1, 0.25F)
+                        new OreConfiguration(rubyOreConfiguration, 1, 0.25F)
                 )
         );
         context.register(
                 RUBY_ORE_VEIN_SIZE_TWO_CONFIGURED_KEY,
                 new ConfiguredFeature<>(
                         Feature.ORE,
-                        new OreConfiguration(sapphireOreConfiguration, 2, 0.25F)
+                        new OreConfiguration(rubyOreConfiguration, 2, 0.25F)
                 )
         );
         context.register(
                 RUBY_ORE_VEIN_SIZE_THREE_CONFIGURED_KEY,
                 new ConfiguredFeature<>(
                         Feature.ORE,
-                        new OreConfiguration(sapphireOreConfiguration, 3, 0.75F)
+                        new OreConfiguration(rubyOreConfiguration, 3, 0.75F)
                 )
         );
         context.register(
                 RUBY_ORE_VEIN_SIZE_FOUR_CONFIGURED_KEY,
                 new ConfiguredFeature<>(
                         Feature.ORE,
-                        new OreConfiguration(sapphireOreConfiguration, 4, 0.95F)
+                        new OreConfiguration(rubyOreConfiguration, 4, 0.95F)
                 )
         );
     }

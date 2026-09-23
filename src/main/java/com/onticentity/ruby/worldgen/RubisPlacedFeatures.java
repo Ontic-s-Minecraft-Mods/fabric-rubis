@@ -14,7 +14,7 @@ import java.util.List;
 public class RubisPlacedFeatures {
     public static void configure(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-        List<PlacementModifier> sapphireOreVeinModifiers = List.of(
+        List<PlacementModifier> rubyOreVeinModifiers = List.of(
                 CountPlacement.of(6),
                 BiomeFilter.biome(),
                 InSquarePlacement.spread(),
@@ -24,28 +24,28 @@ public class RubisPlacedFeatures {
                 RUBY_ORE_VEIN_SIZE_ONE_PLACED_KEY,
                 new PlacedFeature(
                         configuredFeatures.getOrThrow(RubisConfiguredFeatures.RUBY_ORE_VEIN_SIZE_ONE_CONFIGURED_KEY),
-                        sapphireOreVeinModifiers
+                        rubyOreVeinModifiers
                 )
         );
         context.register(
                 RUBY_ORE_VEIN_SIZE_TWO_PLACED_KEY,
                 new PlacedFeature(
                         configuredFeatures.getOrThrow(RubisConfiguredFeatures.RUBY_ORE_VEIN_SIZE_TWO_CONFIGURED_KEY),
-                        sapphireOreVeinModifiers
+                        rubyOreVeinModifiers
                 )
         );
         context.register(
                 RUBY_ORE_VEIN_SIZE_THREE_PLACED_KEY,
                 new PlacedFeature(
                         configuredFeatures.getOrThrow(RubisConfiguredFeatures.RUBY_ORE_VEIN_SIZE_THREE_CONFIGURED_KEY),
-                        sapphireOreVeinModifiers
+                        rubyOreVeinModifiers
                 )
         );
         context.register(
                 RUBY_ORE_VEIN_SIZE_FOUR_PLACED_KEY,
                 new PlacedFeature(
                         configuredFeatures.getOrThrow(RubisConfiguredFeatures.RUBY_ORE_VEIN_SIZE_FOUR_CONFIGURED_KEY    ),
-                        sapphireOreVeinModifiers
+                        rubyOreVeinModifiers
                 )
         );
     }
