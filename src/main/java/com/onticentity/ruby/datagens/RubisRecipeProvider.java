@@ -46,6 +46,16 @@ public class RubisRecipeProvider extends FabricRecipeProvider {
                                 has(RubisItems.RUBY)
                         )
                         .save(output);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, RubisItems.RUBY,9)
+                        .pattern("R")
+                        .define('R', RubisBlocks.RUBY_BLOCK)
+                        .unlockedBy(
+                                "has_ruby",
+                                has(RubisItems.RUBY)
+                        )
+                        .save(output);
+
             }
         };
     }

@@ -25,14 +25,14 @@ public class RubisMaterials {
             BASE_DURABILITY,
             Map.of(
                     ArmorType.HELMET, 5,
-                    ArmorType.CHESTPLATE, 15,
+                    ArmorType.CHESTPLATE, 8,
                     ArmorType.LEGGINGS, 8,
                     ArmorType.BOOTS, 4
             ),
-            5,
+            15,
             SoundEvents.ARMOR_EQUIP_IRON,
-            4.0F,
-            0.3F,
+            2F,
+            0.1F,
             REPAIRS_RUBY_ARMOR,
             GUIDITE_ARMOR_MATERIAL_KEY
     );

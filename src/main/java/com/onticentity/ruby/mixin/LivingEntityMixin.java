@@ -35,15 +35,15 @@ public abstract class LivingEntityMixin {
         float damage = cir.getReturnValue();
 
         if (damageSource.is(DamageTypeTags.IS_FIRE)) {
-            damage *= 0.88F;
+            damage *= 0.82F;
         }
 
         if (damageSource.is(DamageTypeTags.IS_EXPLOSION)) {
-            damage *= 0.88F;
+            damage *= 0.82F;
         }
 
         if (damageSource.is(DamageTypeTags.IS_PROJECTILE)) {
-            damage *= 0.92F;
+            damage *= 0.82F;
         }
 
         cir.setReturnValue(damage);
