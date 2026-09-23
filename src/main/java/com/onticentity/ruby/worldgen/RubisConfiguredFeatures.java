@@ -26,28 +26,28 @@ public class RubisConfiguredFeatures {
                 RUBY_ORE_VEIN_SIZE_ONE_CONFIGURED_KEY,
                 new ConfiguredFeature<>(
                         Feature.ORE,
-                        new OreConfiguration(sapphireOreConfiguration, 1)
+                        new OreConfiguration(sapphireOreConfiguration, 1, 0.25F)
                 )
         );
         context.register(
                 RUBY_ORE_VEIN_SIZE_TWO_CONFIGURED_KEY,
                 new ConfiguredFeature<>(
                         Feature.ORE,
-                        new OreConfiguration(sapphireOreConfiguration, 2)
+                        new OreConfiguration(sapphireOreConfiguration, 2, 0.25F)
                 )
         );
         context.register(
                 RUBY_ORE_VEIN_SIZE_THREE_CONFIGURED_KEY,
                 new ConfiguredFeature<>(
                         Feature.ORE,
-                        new OreConfiguration(sapphireOreConfiguration, 3)
+                        new OreConfiguration(sapphireOreConfiguration, 3, 0.75F)
                 )
         );
         context.register(
                 RUBY_ORE_VEIN_SIZE_FOUR_CONFIGURED_KEY,
                 new ConfiguredFeature<>(
                         Feature.ORE,
-                        new OreConfiguration(sapphireOreConfiguration, 4)
+                        new OreConfiguration(sapphireOreConfiguration, 4, 0.95F)
                 )
         );
     }

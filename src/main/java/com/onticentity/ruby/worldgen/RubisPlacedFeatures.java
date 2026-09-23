@@ -15,10 +15,10 @@ public class RubisPlacedFeatures {
     public static void configure(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         List<PlacementModifier> sapphireOreVeinModifiers = List.of(
-                CountPlacement.of(64),
+                CountPlacement.of(6),
                 BiomeFilter.biome(),
                 InSquarePlacement.spread(),
-                HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))
+                HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(8))
         );
         context.register(
                 RUBY_ORE_VEIN_SIZE_ONE_PLACED_KEY,
